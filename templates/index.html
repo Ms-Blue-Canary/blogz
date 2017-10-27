@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+        
+
+    <h1>Blog Users!</h1>
+
+    {{% extends 'base.html' %}
+    
+    {% block content %}
+    
+        <h2>Everyone who Thinks Zuckerberg is a Piece of @#$^!</h2>
+    
+        <ul class="users">
+        {% for user in users %}
+            <li class="user">
+                <a href="/blog?user={{ user.username }}">
+                    {{ owner.username }}
+                </a>
+            </li>
+        {% endfor %}
+        </ul>
+    
+    {% endblock %}

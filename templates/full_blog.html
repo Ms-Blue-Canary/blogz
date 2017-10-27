@@ -3,10 +3,10 @@
 {% block content %}
         
 
-<h1>blog posts</h1>
+<h1>Blog Posts</h1>
 
-<h2><a href="/blog?id="></a></h2>
-<p></p>
-<p class="post-author">written by <a href="/blog?user="></a></p>
+<h2><a href="/blog?id={{ post.id }}"{{ post.name }}></a></h2>
+<p class="post_body"{{ post.body }}>
+<p class="user">written by <a href="/blog?user={{ user.id }}"> {{ owner.username }}></a></p>
 
 {% endblock %}
