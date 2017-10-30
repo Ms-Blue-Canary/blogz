@@ -3,22 +3,17 @@
 {% block content %}
 
     <h1>{{ user.username }} Posts</h1>
-
-    {% if posts|length == 0 %}
-        <p>No posts. Come back later. I guess. If you really want.</p>
-    {% else %}
         <div class="full_blog">
-            {% for post in posts %}
+            {% for post in user.blogs %}
             <div class="one_post">
                 <h2>
                     <a href="/blog?id={{ post.id }}">{{ post.name }}</a>
                 </h2>
                 <p>{{ post.body }}</p>
 
-                <p>Written by <a href="/blog?user={{ owner.username }}">{{ owner.username }}</a></p>
+                <p>Written by <a href="/blog?user_id={{ post.owner.id}}">{{ post.owner.username }}</a></p>
             </div>
             {% endfor %}
         </div>
-    {% endif %}
 
 {% endblock %}
