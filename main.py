@@ -67,12 +67,12 @@ def register():
         verify = request.form['verify']
         existing_user = User.query.filter_by(username=username).first()
         
-        if username == "" or " " in username or len(username) < 3 or len(username) > 20:
-            flash  ("Invalid username", 'error')
+        if username == "" or " " in username or len(username) <= 3 or len(username) > 20:
+            flash  ("Invalid username. Must be more than 3 characters or less than 20 and cannot contain spaces", 'error')
             return render_template('register.html', username=username)
 
-        if password == "" or " " in password or len(password) < 3 or len(password) > 50:
-            flash ("Invalid password", 'error')
+        if password == "" or " " in password or len(password) <= 3 or len(password) > 50:
+            flash ("Invalid password. Must be more than 3 characters or less than 50 and cannot contain spaces", 'error')
             return render_template('register.html', username=username)
 
         if verify == "" or verify != password:
