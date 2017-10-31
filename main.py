@@ -133,7 +133,7 @@ def newpost():
             new_entry = Blog(new_name, new_body, user)
             db.session.add(new_entry)
             db.session.commit()
-            return render_template("one_post.html", new_post=new_entry, user=user)
+            return render_template("one_post.html", new_post=new_entry)
 
     else:
         return render_template("new_post.html")

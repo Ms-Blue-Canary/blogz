@@ -4,7 +4,7 @@
     <html>
         <h1>{{ new_post.name }}</h1>
         <p>{{ new_post.body }}</p>
-        <p>Written by <a href="/blog?user_id={{ post.owner.id}}">{{ post.owner.username }}</a></p>
+        <p>Written by <a href="/blog?user_id={{ new_post.owner.id}}">{{ new_post.owner.username }}</a></p>
     </html>
 
 {% endblock %}
